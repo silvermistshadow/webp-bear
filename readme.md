@@ -33,7 +33,7 @@ _{Let people know what to do if they run into any issues or have questions, idea
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Javascript, Node.js, Webpack, Jasmine and Karma, among others_
 
 ### License
 
