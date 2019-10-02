@@ -11,7 +11,6 @@ describe('Bear', function() {
   });
   it('should have a name and a food level of 10 when it is created', function() {
     expect(fuzzy.name).toEqual("Fuzzy");
-    console.log(fuzzy.name);
     expect(fuzzy.foodLevel).toEqual(10);
   });
 

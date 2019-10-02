@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VAR</title>
+    <title>Very hungry bear</title>
   </head>
   <body>
+    <div class="container"></div>
+      Feed your own hungry bear
 
+      <form id="bear-form">
+        <div class="form-group">
+          <label for="bear-name">Bear name:</label>
+          <input type="text" id="bear-name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="bear-diff">Difficulty:</label>
+          <select class="form-control" id="bear-diff">
+            <option value="easy">Easy</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Make bear</button>
+      </form>
+
+      <div id="game-area">
+        <p>Bear name: <span id="game-name"></span></p>
+        <p>Hunger: <span id="game-hunger"></span></p>
+        <button id="feed-normal" class="btn btn-success">Feed (10)</button>
+      </div>
   </body>
 </html>
