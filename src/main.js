@@ -13,6 +13,13 @@ $(document).ready(function() {
     fuzzy.setHunger(hungerInterval);
     $("#bear-form").hide();
     $("#game-area").show();
+    $("#game-over").hide();
+    $("#game-name").text(fuzzy.name);
+    $("button#feed-normal").click(function () {
+      fuzzy.feed(10);
+    })
+    updateHunger();
+    gameOver();
   });
   function updateHunger() {
     setInterval(() => {
@@ -20,6 +27,13 @@ $(document).ready(function() {
       $("#game-hunger").text(foodLevel);
     }, 1000);
   }
-  
+  function gameOver() {
+    setInterval(() => {
+      if (fuzzy.wasPlayerEaten()) {
+        $(".feed").prop('disabled', true);
+        $("#game-over").show();
+      }
+    }, 1000);
+  }
 
 });

@@ -1,3 +1,7 @@
 #game-area {
   display: none;
 }
+
+#game-over {
+  display: none;
+}

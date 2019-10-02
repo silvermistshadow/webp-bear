@@ -36,8 +36,8 @@ export class Bear {
     }
   }
 
-  feed() {
-    this.foodLevel = 10;
+  feed(amount) {
+    this.foodLevel = amount;
   }
 
 }

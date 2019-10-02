@@ -32,7 +32,7 @@ describe('Bear', function() {
 
   it('should have a food level of ten if it is fed', function() {
     jasmine.clock().tick(9001);
-    fuzzy.feed();
+    fuzzy.feed(10);
     expect(fuzzy.foodLevel).toEqual(10);
   });
 
