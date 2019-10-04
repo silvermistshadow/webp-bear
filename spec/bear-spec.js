@@ -2,9 +2,10 @@ import { Bear } from '../src/Bear';
 
 describe('Bear', function() {
   let fuzzy = new Bear("Fuzzy");
+  let hungerInterval = fuzzy.setDifficulty("hard");
   beforeEach(function() {
     jasmine.clock().install();
-    fuzzy.setHunger();
+    fuzzy.setHunger(hungerInterval);
   });
   afterEach(function() {
     jasmine.clock().uninstall();

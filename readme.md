@@ -9,9 +9,15 @@
 _{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
 
 specs:
-0. create and store Bear object and data
-1. have a name and a food level of 10 when it is created
-2. have a food level of 7 after 3001 milliseconds
+example (primary) input: `let fuzzy = new Bear("Fuzzy")`
+0. should create and store Bear object and data
+1. should have a name and a food level of 10 when it is created
+  example input: `fuzzy`
+  output: `Bear {name: "Fuzzy", foodLevel: 10}`
+2. should have a food level of 7 after 3001 milliseconds
+3. should get very hungry if the food level drops below zero
+4. should get very hungry if 10 seconds pass without feeding (on hard difficulty)
+5. should have a food level of ten if it is fed (standard feed, anyways)
 
 ## Setup/Installation Requirements
 
