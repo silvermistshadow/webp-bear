@@ -25,7 +25,7 @@ $(document).ready(function() {
     setInterval(() => {
       let foodLevel = fuzzy.foodLevel;
       $("#game-hunger").text(foodLevel);
-    }, 1000);
+    }, 500);
   }
   function gameOver() {
     setInterval(() => {
