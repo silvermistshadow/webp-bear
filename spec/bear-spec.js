@@ -2,10 +2,8 @@ import { Bear } from '../src/Bear';
 
 describe('Bear', function() {
   let fuzzy = new Bear("Fuzzy");
-  let hungerInterval = fuzzy.setDifficulty("hard");
   beforeEach(function() {
     jasmine.clock().install();
-    fuzzy.setHunger(hungerInterval);
   });
   afterEach(function() {
     jasmine.clock().uninstall();
@@ -17,6 +15,7 @@ describe('Bear', function() {
 
 
   it('should have a food level of 7 after 3001 milliseconds', function() {
+    fuzzy.setHunger(fuzzy.interval);
     jasmine.clock().tick(3001);
     expect(fuzzy.foodLevel).toEqual(7);
   });
@@ -27,19 +26,20 @@ describe('Bear', function() {
   });
 
   it('should get very hungry if 10 seconds pass without feeding', function() {
+    fuzzy.setHunger(fuzzy.interval);
     jasmine.clock().tick(10001);
     expect(fuzzy.wasPlayerEaten()).toEqual(true);
   });
 
   it('should have a food level of ten if it is fed', function() {
+    fuzzy.setHunger(fuzzy.interval);
     jasmine.clock().tick(9001);
     fuzzy.feed(10);
     expect(fuzzy.foodLevel).toEqual(10);
   });
   it('should change how much time it takes for the food level to fall if the user  selects another difficulty (example will use easy)', function() {
-    hungerInterval = fuzzy.setDifficulty("easy");
-    console.log(hungerInterval);
-    fuzzy.setHunger(hungerInterval);
+    fuzzy.interval = 5000;
+    fuzzy.setHunger(fuzzy.interval);
     jasmine.clock().tick(10001);
     expect(fuzzy.foodLevel).toEqual(8);
   });

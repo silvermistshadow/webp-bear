@@ -2,6 +2,7 @@ export class Bear {
   constructor(name) {
     this.name = name;
     this.foodLevel = 10;
+    this.interval = 1000;
   }
 
   setDifficulty(diff) {
