@@ -6,20 +6,19 @@ export class Bear {
   }
 
   setDifficulty(diff) {
-    let interval = 1000;
     if (diff === "easy") {
-      interval = 5000;
+      this.interval = 5000;
     }
     else if (diff === "normal") {
-      interval = 2000;
+      this.interval = 2000;
     }
     else if (diff === "hard") {
-      interval = 1000;
+      this.interval = 1000;
     }
     else {
-      interval = 1000;
+      this.interval = 1000;
     }
-    return interval;
+    return this.interval;
   }
 
   setHunger(interval) {

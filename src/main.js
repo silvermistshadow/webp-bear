@@ -9,8 +9,8 @@ $(document).ready(function() {
     event.preventDefault();
     fuzzy.name = $("input#bear-name").val();
     let difficulty = $("#bear-diff").val();
-    let hungerInterval = fuzzy.setDifficulty(difficulty);
-    fuzzy.setHunger(hungerInterval);
+    fuzzy.interval = fuzzy.setDifficulty(difficulty);
+    fuzzy.setHunger(fuzzy.interval);
     $("#bear-form").hide();
     $("#game-area").show();
     $("#game-over").hide();
@@ -23,7 +23,7 @@ $(document).ready(function() {
   });
   function updateHunger() {
     setInterval(() => {
-      let foodLevel = fuzzy.foodLevel();
+      let foodLevel = fuzzy.foodLevel;
       $("#game-hunger").text(foodLevel);
     }, 1000);
   }
