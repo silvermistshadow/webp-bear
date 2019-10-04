@@ -18,6 +18,12 @@ example (primary) input: `let fuzzy = new Bear("Fuzzy")`
 3. should get very hungry if the food level drops below zero
 4. should get very hungry if 10 seconds pass without feeding (on hard difficulty)
 5. should have a food level of ten if it is fed (standard feed, anyways)
+  fuzzy.foodLevel = 5
+  input: fuzzy.feed(10);
+  output: fuzzy.foodLevel = 10
+6. should change how much time it takes for the food level to fall if the user  selects another difficulty
+  example input: user selects 'easy'
+  example output, after 10 seconds: fuzzy.foodLevel = 8;
 
 ## Setup/Installation Requirements
 

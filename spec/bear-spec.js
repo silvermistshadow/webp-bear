@@ -36,5 +36,12 @@ describe('Bear', function() {
     fuzzy.feed(10);
     expect(fuzzy.foodLevel).toEqual(10);
   });
+  it('should change how much time it takes for the food level to fall if the user  selects another difficulty (example will use easy)', function() {
+    hungerInterval = fuzzy.setDifficulty("easy");
+    console.log(hungerInterval);
+    fuzzy.setHunger(hungerInterval);
+    jasmine.clock().tick(10001);
+    expect(fuzzy.foodLevel).toEqual(8);
+  });
 
 })
