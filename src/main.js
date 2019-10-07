@@ -15,8 +15,14 @@ $(document).ready(function() {
     $("#game-area").show();
     $("#game-over").hide();
     $("#game-name").text(fuzzy.name);
+    $("button#feed-small").click(function () {
+      fuzzy.feed(5);
+    })
     $("button#feed-normal").click(function () {
       fuzzy.feed(10);
+    })
+    $("button#feed-large").click(function () {
+      fuzzy.feed(50);
     })
     updateHunger();
     gameOver();

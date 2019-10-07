@@ -5,6 +5,7 @@ describe('Bear', function() {
   beforeEach(function() {
     jasmine.clock().install();
   });
+  //I used to put the setHunger function in the beforeEach as well, but it was causing problems later
   afterEach(function() {
     jasmine.clock().uninstall();
   });
