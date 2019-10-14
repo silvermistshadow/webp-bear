@@ -1,8 +1,10 @@
 import $ from 'jquery';
 import './styles.css';
 import { Bear } from './Bear';
+import { type } from 'os';
 
 $(document).ready(function() {
+  let myKey = process.env.API_KEY;
   let fuzzy = new Bear("Fuzzy");
   $("#bear-form").show();
   $("#bear-form").submit(function(event) {
@@ -41,5 +43,18 @@ $(document).ready(function() {
       }
     }, 1000);
   }
+
+  $("#bear-image").click(function() {
+    $.ajax({
+      url: 'http://api.giphy.com/v1/gifs/search?q=bearg&api_key='+myKey+'&limit=5&rating=g',
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(response) {
+        $("#bear-image").append('<img src = "' + response.data[1].embed_url + '">')
+      }
+    })
+  });
 
 });
